@@ -1,5 +1,5 @@
 import sys 
-class Bank: 
+class Account: 
    def __init__(self, name, balance=0.0): 
       self.name = name 
       self.balance = balance 
@@ -16,18 +16,15 @@ class Bank:
       return self.balance 
 
 
-name = input('Enter name:') 
-b = Bank(name) 
+name = int(input('Enter account id:')) 
+b = Account(name) 
 while(True): 
-   print('d -Deposit, w -Withdraw, e -Exit') 
-   choice = input('Your choice:') 
-   if choice == 'e' or choice == 'E': 
-      sys.exit() 
-   amount = float(input('Enter amount:')) 
-
+   
+   acc_type = input("Enter account type")
+   amt = float(input('Enter balance:'))
    if choice == 'd' or choice == 'D': 
-      print('Balance after deposit:', b.deposit(amount))
+      print('Balance after deposit:', b.deposit(amt))
       print("---------------**********-------------------")
    elif choice == 'w' or choice == 'W': 
-      print('Balance after withdrawal:', b.withdraw(amount))
+      print('Balance after withdrawal:', b.withdraw(amt))
       print("---------------**********-------------------")
